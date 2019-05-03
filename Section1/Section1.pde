@@ -39,13 +39,24 @@ class Visualizer {
     //Positive values are green and go above the line.
 
     //???WRITE THIS METHOD FIRST!!!
-    //THESE ARE WRONG: They just illustrate how they could look
-    fill(255, 0, 0);
-    rect(x+40, y+100, 60, 50);
-    fill(0, 255, 0);
-    rect(x+120, y+50, 60, 50);
-
-
+    
+    //Width is the width of all of the bars
+    float width = 400 / values.length;
+    //Distance is the distance from from the starting x position
+    float distance = 0;
+    //For each of the heights in values...
+    for (float value : values){
+      //Set the color green by default
+      fill(255, 0, 0);
+      //If the height is less than 0, set the color to red
+      if (value < 0){
+        fill(0, 255, 0);
+      }
+      //Create a rectangle of the current space, with width width, and height value
+      rect(x + distance, y + 100, width, value);
+      //Increase the distance
+      distance += width;
+    }
     //Width of the visualizer is 400!
 
   
