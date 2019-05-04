@@ -16,7 +16,9 @@ void setup() {
 */
 void gasket(int levels, float v1x, float v1y, float v2x, float v2y, float v3x, float v3y) {
     //YOU WRITE THIS METHOD!
+    //If level is greater than 0...
     if (levels > 0){
+       //Create the triangle at the points given and call gasket with the midpoints
       triangle(v1x, v1y, v2x, v2y, v3x, v3y); 
       gasket(levels - 1, v1x, v1y, ((v1x + v2x) / 2), ((v1y + v2y) / 2), ((v1x + v3x) / 2), ((v1y + v3y) / 2));
       gasket(levels - 1, v2x, v2y, ((v1x + v2x) / 2), ((v1y + v2y) / 2), ((v2x + v3x) / 2), ((v2y + v3y) / 2));
